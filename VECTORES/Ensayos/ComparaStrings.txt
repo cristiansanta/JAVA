@@ -1,0 +1,37 @@
+/*Se dispone de una lista de N nombres de alumnos.
+Escribir un algoritmo que solicite el nombre de un alumno
+y busque en la lista (array) si el nombre está en la lista.
+ */
+package ejerciciosjava;
+
+import java.util.Scanner;
+public class ejercicio4 {
+     public static void main(String[] args) {
+         Scanner entrada = new Scanner(System.in);
+          
+         System.out.println("Escriba la cantidad de nombre que desea ingresar: ");
+         int cant = entrada.nextInt();
+         int var = 0;
+         int cont = 0;
+         String vector[] = new String[cant];
+          String vector2[] = new String[cant];
+         for(int i=0; i<vector.length;i++){
+             System.out.print("Ingrese el nombre: ");
+             vector[i] = entrada.next();
+         }
+         System.out.println("Ingrese el nombre que desea buscar: ");
+         vector2[0] = entrada.next();           
+         for(int n=0; n<cant; n++){
+             if(vector[n].equalsIgnoreCase(vector2[var])){
+                 System.out.println("El nombre del alumno "+vector[n]+" si esta en la lista");
+                 cont++;
+             }
+           
+                
+             
+         }
+         if(cont == 0){
+              System.out.println("El nombre del alumno ingresado no esta en la lista");
+         }
+     }
+}

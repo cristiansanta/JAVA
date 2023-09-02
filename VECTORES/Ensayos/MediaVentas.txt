@@ -1,0 +1,60 @@
+/* Una empresa tiene diez almacenes
+y necesita crear un algoritmo que lea las ventas mensuales de los diez almacenes, 
+calcular la media de ventas 
+y obtener un listado de los almacenes cuyas ventas mensuales son superiores a la media.
+ */
+package ejerciciosjava;
+import java.util.Scanner;
+
+
+public class ejercicio3 {
+     public static void main(String[] args) {
+    Scanner entrada = new Scanner(System.in);
+  
+   float vector [] = new float[10];
+        float vector2 [] = new float[10];  
+        float prom = 0;
+        float suma = 0;
+        int venta = 0;
+        int i;
+        int pos = 0;
+        float promT = 0;
+        float sumaT = 0;
+        float aux = 0;
+    float vector3 [] = new float[10];
+        for( i=1; i<=10; i++){
+            System.out.println("Ingrese la cantidad de ventas del almacen: " +i+":");
+             venta = entrada.nextInt();
+            for(int n=1; n<=venta; n++){
+                System.out.println("Ingrese el valor de la venta: ");
+                vector[n] = entrada.nextFloat();
+            }
+            for(int p=0; p<=venta; p++){
+                suma += vector[p];
+                aux = suma;
+                
+                prom = suma / venta;            
+            }
+            vector3[pos] = aux;
+          suma = 0;   
+        vector2[pos] = prom;
+        sumaT += vector2[pos];
+        promT = sumaT / i;
+        prom = 0;
+        pos++;
+        aux = 0;
+        }
+        for(int m=0; m<pos;m++){
+            int c = m+1;
+         System.out.println("El promedio del almacen "+c+" es: "+vector2[m]);
+         
+        }
+        System.out.println("El promedio total de los almacenes es: " +promT);
+        System.out.println("Los almacenes que superan el promedio son: ");
+            for(int x=0; x<venta; x++){
+               if(vector3[x] >promT){
+                   System.out.println("Almacen "+(x+1));
+               }
+            }
+    }
+}
